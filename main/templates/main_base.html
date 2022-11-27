@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Yota</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@700&family=Ubuntu:wght@700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+    </style>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+        <header id="header" class="flex justify-between items-center bg-[#ED5555] px-[25px] min-h-[15vh] shadow-md">
+            <!-- LOGO -->
+            <a href="#!" class="text-white font-bold text-[1.5em] sm:text-[2em] duration-500 no-underline">YOTA</a>
+        
+            <div class="toggle"></div>
+        
+            <!-- NAVBAR --->
+            <ul class="navigate hidden sm:flex relative flex gap-[25px]">
+                <!-- Home -->
+                <li class="group relative no-underline w-[60px] h-[60px] bg-white rounded-[60px] cursor-pointer flex justify-center 
+                            items-center duration-500 hover:w-[160px] shadow-[0_10px_25px_rgba(0,0,0,0.1)] 
+                            hover:bg-gradient-to-r from-white to-white" style="--i:#000;--j:#999;">
+                    <span class="absolute">
+                        <ion-icon name="home-outline" class="text-[#ED5555] text-[1.75em] duration-500 delay-[0.25s] 
+                                        group-hover:scale-0 group-hover:delay[0s]">
+                        </ion-icon>
+                    </span>
+                    <span class="text-black text-[1.1em] uppercase tracking-[0.1em] scale-0 duration-500 delay-0
+                                    group-hover:delay-[0.25s] group-hover:font-bold group-hover:scale-100">
+                        Home</span>
+                </li>
+                <!-- Blog -->
+                <li class="group relative no-underline w-[60px] h-[60px] bg-white rounded-[60px] cursor-pointer flex justify-center 
+                            items-center duration-500 hover:w-[160px] shadow-[0_10px_25px_rgba(0,0,0,0.1)] 
+                            hover:bg-gradient-to-r from-white to-white" style="--i:#000;--j:#999;">
+                    <span class="absolute">
+                        <ion-icon name="newspaper-outline" class="text-[#ED5555] text-[1.75em] duration-500 delay-[0.25s] 
+                                        group-hover:scale-0 group-hover:delay[0s]">
+                        </ion-icon>
+                    </span>
+                    <span class="text-black text-[1.1em] uppercase tracking-[0.1em] scale-0 duration-500 delay-0
+                            group-hover:delay-[0.25s] group-hover:font-bold group-hover:scale-100">
+                        Blogs</span>
+                </li>
+                <!-- Team -->
+                <li class="group relative no-underline w-[60px] h-[60px] bg-white rounded-[60px] cursor-pointer flex justify-center 
+                            items-center duration-500 hover:w-[160px] shadow-[0_10px_25px_rgba(0,0,0,0.1)] 
+                            hover:bg-gradient-to-r from-white to-white" style="--i:#000;--j:#999;">
+                    <span class="absolute">
+                        <ion-icon name="people-outline" class="text-[#ED5555] text-[1.75em] duration-500 delay-[0.25s] 
+                                        group-hover:scale-0 group-hover:delay[0s]">
+                        </ion-icon>
+                    </span>
+                    <span class="text-black text-[1.1em] uppercase tracking-[0.1em] scale-0 duration-500 delay-0
+                                    group-hover:delay-[0.25s] group-hover:font-bold group-hover:scale-100">
+                        Our Team</span>
+                </li>
+                <!-- About -->
+                <li class="group relative no-underline w-[60px] h-[60px] bg-white rounded-[60px] cursor-pointer flex justify-center 
+                            items-center duration-500 hover:w-[160px] shadow-[0_10px_25px_rgba(0,0,0,0.1)] 
+                            hover:bg-gradient-to-r from-white to-white" style="--i:#000;--j:#999;">
+                    <span class="absolute">
+                        <ion-icon name="information-circle-outline" class="text-[#ED5555] text-[1.75em] duration-500 delay-[0.25s] 
+                                        group-hover:scale-0 group-hover:delay[0s]">
+                        </ion-icon>
+                    </span>
+                    <span class="text-black text-[1.1em] uppercase tracking-[0.1em] scale-0 duration-500 delay-0
+                                    group-hover:delay-[0.25s] group-hover:font-bold group-hover:scale-100">
+                        About us</span>
+                </li>
+                <!-- Contact -->
+                <li class="group relative no-underline w-[60px] h-[60px] bg-white rounded-[60px] cursor-pointer flex justify-center 
+                            items-center duration-500 hover:w-[160px] shadow-[0_10px_25px_rgba(0,0,0,0.1)] 
+                            hover:bg-gradient-to-r from-white to-white" style="--i:#000;--j:#999;">
+                    <span class="absolute">
+                        <ion-icon name="call-outline" class="text-[#ED5555] text-[1.75em] duration-500 delay-[0.25s] 
+                                        group-hover:scale-0 group-hover:delay[0s]">
+                        </ion-icon>
+                    </span>
+                    <span class="text-black text-[1.1em] uppercase tracking-[0.1em] scale-0 duration-500 delay-0
+                                    group-hover:delay-[0.25s] group-hover:font-bold group-hover:scale-100">
+                        Contact us</span>
+                </li>
+            </ul>
+        </header>
+        {% block content %}
+
+        {% endblock content %}
+
+        <!-- JS -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script>
+            const toggleMenu = document.querySelector('.toggle');
+            const navigation = document.querySelector('.navigate');
+
+            toggleMenu.onclick = function () {
+                toggleMenu.classList.toggle('active');
+                navigation.classList.toggle('active');
+            }
+        </script>
+</body>
+
+</html>
