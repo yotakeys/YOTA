@@ -9,7 +9,7 @@ from django.shortcuts import redirect
 
 
 class Login(LoginView):
-    template_name = "user_login.html"
+    template_name = "user/login.html"
     fields = "__all__"
     redirect_authenticated_user = True
 
@@ -18,7 +18,7 @@ class Login(LoginView):
 
 
 class Register(FormView):
-    template_name = 'user_register.html'
+    template_name = 'user/register.html'
     form_class = UserCreationForm
     redirect_authenticated_user = True
     success_url = reverse_lazy('home')
