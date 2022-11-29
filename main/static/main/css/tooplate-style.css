@@ -296,7 +296,7 @@ b, strong {
   color: rgba(255, 255, 255, 0.8);
 }
 .dark-mode .navbar-light .navbar-nav .nav-link:hover {
-  color: #ffc200;
+  color: white;
 }
 .dark-mode .navbar[class*="headroom--not-top"] {
   background: #0c0c0d;
@@ -511,7 +511,7 @@ b, strong {
     text-align: center;
     padding-bottom: 20px;
   }
-
+  
   .navbar-expand-sm .navbar-nav .nav-link {
     padding: 3px 20px;
   }
