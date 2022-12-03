@@ -5,4 +5,7 @@ from django.http import HttpResponse
 
 
 def homeView(request):
-    return render(request, 'main/index.html')
+    f = open("version.txt", 'r')
+    version = f.readline()
+    f.close()
+    return render(request, 'main/index.html', {'version': version})

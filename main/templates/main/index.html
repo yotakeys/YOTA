@@ -9,6 +9,7 @@
     <meta name="author" content="">
 
     <title>YOTA</title>
+    <link rel="shortcut icon" href="{% static 'icon/YOTA.ico' %}" type="image/x-icon">
 
     <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/unicons.css' %}">
@@ -17,6 +18,7 @@
 
     <!-- MAIN STYLE -->
     <link rel="stylesheet" href="{% static 'main/css/tooplate-style.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/card.css' %}">
 
     <!--
 
@@ -29,52 +31,7 @@ https://www.tooplate.com/view/2115-marvel
 
 <body>
 
-    <!-- MENU -->
-    <nav class="navbar navbar-expand-sm navbar-light">
-        <div class="container">
-            {% if request.user.is_authenticated %}
-                <a data-toggle="tooltip" data-placement="top"title="Logout" class="navbar-brand" href="{% url 'logout' %}"><i class='uil uil-user'></i> {{ request.user|title }}</a>
-            {% else %}
-                <a data-toggle="tooltip" data-placement="top"title="Login" class="navbar-brand" href="{% url 'login' %}"><i class='uil uil-user'></i> Login</a>
-            {% endif %}
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                <span class="navbar-toggler-icon"></span>
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link"><span data-hover="About">About</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#project" class="nav-link"><span data-hover="Projects">Projects</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link"><span data-hover="Blog">Blog</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#resume" class="nav-link"><span data-hover="Resume">Resume</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link"><span data-hover="Contact">Contact</span></a>
-                    </li>
-                </ul>
-
-                <ul class="navbar-nav ml-lg-auto">
-                    <div class="ml-lg-4">
-                        <div class="color-mode d-lg-flex justify-content-center align-items-center">
-                            <i class="color-mode-icon"></i>
-                            Mode
-                        </div>
-                    </div>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    {% include 'main/navbar.html' %}
 
     <!-- ABOUT -->
     <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
@@ -115,53 +72,11 @@ https://www.tooplate.com/view/2115-marvel
         </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="project py-5" id="project">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-11 text-center mx-auto col-12">
-
-                    <div class="col-lg-8 mx-auto">
-                        <h2>Things I have designed for digital media agencies</h2>
-                    </div>
-
-                    <div class="owl-carousel owl-theme">
-                        <div class="item">
-                            <div class="project-info">
-                                <img src="{% static 'main/images/project/project-image01.png' %}" class="img-fluid" alt="project image">
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="project-info">
-                                <img src="{% static 'main/images/project/project-image02.png' %}" class="img-fluid" alt="project image">
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="project-info">
-                                <img src="{% static 'main/images/project/project-image03.png' %}" class="img-fluid" alt="project image">
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="project-info">
-                                <img src="{% static 'main/images/project/project-image04.png' %}" class="img-fluid" alt="project image">
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="project-info">
-                                <img src="{% static 'main/images/project/project-image05.png' %}" class="img-fluid" alt="project image">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- features -->
+    <!-- { include features.html} -->
+    <!-- projects  -->
+    <!-- { include projects.html} -->
+    
 
     <!-- FEATURES -->
     <section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="resume">
@@ -219,7 +134,7 @@ https://www.tooplate.com/view/2115-marvel
                             </div>
                             <div class="timeline-info">
                                 <h3><span>High School</span><small>SMAN 1 Sidoarjo</small></h3>
-                                <p>Interested in Programming, Learning Pascal, C, C++ for Software Development and Competitive Programming.</p>
+                                <p>Interested in Programming, Exploring Pascal, C, C++ for Software Development and Competitive Programming.</p>
                             </div>
                         </div>
 
@@ -255,8 +170,8 @@ https://www.tooplate.com/view/2115-marvel
                     <div class="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5">
                         <div class="contact-info-item">
                             <h3 class="mb-3 text-white">Reach Me</h3>
-                            <p class="footer-text mb-0">@yotakeys</p>
-                            <p><a href="mailto:hello@company.co">raihankeyisa@gmail.com</a></p>
+                            <p class="footer-text mb-0"><a href="https://www.instagram.com/yotakeys/">@yotakeys</a></p>
+                            <p><a href="mailto:raihankeyisa@gmail.com">raihankeyisa@gmail.com</a></p>
                         </div>
 
                         <ul class="social-links">
@@ -264,7 +179,7 @@ https://www.tooplate.com/view/2115-marvel
                                     title="Github"></a></li>
                             <li><a href="https://www.instagram.com/yotakeys/" class="uil uil-instagram" data-toggle="tooltip" data-placement="left"
                                     title="Instagram"></a></li>
-                            <li><a href="#contact" class="uil uil-mailbox" data-toggle="tooltip" data-placement="left"
+                            <li><a href="mailto:raihankeyisa@gmail.com" class="uil uil-mailbox" data-toggle="tooltip" data-placement="left"
                                     title="Email"></a></li>
                         </ul>
                     </div>
@@ -309,9 +224,10 @@ https://www.tooplate.com/view/2115-marvel
             <div class="row">
 
                 <div class="col-lg-12 col-12">
-                    <p class="copyright-text text-center">Copyright &copy; 2022 yotakeys . All rights reserved</p>
-                    <p class="copyright-text text-center">Designed by <a rel="nofollow"
-                            href="https://www.facebook.com/tooplate">Tooplate</a></p>
+                    <p class="copyright-text text-center">Copyright &copy; 2022 YOTA (ver {{version}})</p>
+                    <p class="copyright-text text-center">All rights reserved</p>
+                    <!-- <p class="copyright-text text-center">Designed by <a rel="nofollow"
+                            href="https://www.facebook.com/tooplate">Tooplate</a></p> -->
                 </div>
 
             </div>
