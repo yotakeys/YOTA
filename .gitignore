@@ -8,6 +8,8 @@ db.sqlite3
 
 .env
 
+.pytest_cache
+
 .Python
 [Bb]in
 [Ii]nclude

@@ -1,1 +1,10 @@
 1.0.0
+
+Detailed:
+
+1.0.0:
+    - Base Landing website
+    - User Registration
+    - Personal portofolio
+    - Experience and Education
+    - Contact Information
