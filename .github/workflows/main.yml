@@ -1,10 +1,12 @@
-name: test_YOTA
+name: testing
 on: [pull_request, push] # activates the workflow when there is a push or pull request in the repo
 env:
   SECRET_KEY: ${{ env.SECRET_KEY }}
 jobs:
-  test_project:
+  deployment:
     runs-on: ubuntu-latest # operating system your code will run on
+    environment:
+      name: testing
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
