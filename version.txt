@@ -8,3 +8,7 @@ Detailed:
     - Personal portofolio
     - Experience and Education
     - Contact Information
+
+1.1.0:
+    - Testing main, user configuration using Pytest and django Test
+    - Github action workflow for environment

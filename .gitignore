@@ -10,6 +10,8 @@ db.sqlite3
 
 .pytest_cache
 
+__pychache__
+
 .Python
 [Bb]in
 [Ii]nclude
