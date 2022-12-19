@@ -9,7 +9,6 @@ def test_main_view():
     path = reverse("home")
     request = RequestFactory().get(path)
     response = homeView(request)
-    # assert status code from requesting the view is 200(OK success status response code)
     assert response.status_code == 200
 
 

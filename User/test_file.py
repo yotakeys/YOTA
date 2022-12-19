@@ -1,8 +1,7 @@
 import pytest
 from django.contrib.auth.models import User
 from django.urls import reverse, resolve
-from django.test import RequestFactory, Client
-from User.views import Login, Register
+from django.test import Client
 
 
 @pytest.mark.django_db  # give test access to database
@@ -19,7 +18,6 @@ def test_register_user():
 def test_login_view():
     client = Client()
     response = client.get('/user/login/')
-    # assert status code from requesting the view is 200(OK success status response code)
     assert response.status_code == 200
 
 
@@ -33,7 +31,6 @@ def test_login_url():
 def test_register_view():
     client = Client()
     response = client.get('/user/register/')
-    # assert status code from requesting the view is 200(OK success status response code)
     assert response.status_code == 200
 
 
