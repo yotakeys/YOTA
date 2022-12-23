@@ -30,9 +30,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['yota.site']
 
 
 # Application definition
@@ -93,12 +93,12 @@ DATABASES = {
 # Production Database
 # DATABASES = {
 #     'default': {
-#         'ENGINE': env('DATABASE_ENGINE'),
-#         'NAME': env('DATABASE_NAME'),
-#         'HOST': env('DATABASE_HOST'),
-#         'USER': env('DATABASE_USER'),
-#         'PASSWORD': env('DATABASE_PASS'),
-#         'PORT': env('DATABASE_PORT'),
+#         'ENGINE': os.environ.get('DATABASE_ENGINE'),
+#         'NAME': os.environ.get('DATABASE_NAME'),
+#         'HOST': os.environ.get('DATABASE_HOST'),
+#         'USER': os.environ.get('DATABASE_USER''),
+#         'PASSWORD':os.environ.get('DATABASE_PASS'),
+#         'PORT': os.environ.get('DATABASE_PORT'),
 
 #     }
 # }
@@ -144,10 +144,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
+STATIC_URL = 'static/'
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static')
+# ]
+
+# MEDIA_ROOT = os.environ.get('MEDIA_ROOT')
+STATIC_ROOT = os.environ.get('STATIC_ROOT')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

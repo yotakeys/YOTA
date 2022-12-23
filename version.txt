@@ -1,14 +1,17 @@
-1.0.0
+1.2.0
 
 Detailed:
 
-1.0.0:
+1.0.x:
     - Base Landing website
     - User Registration
     - Personal portofolio
     - Experience and Education
     - Contact Information
 
-1.1.0:
+1.1.x:
     - Testing main, user configuration using Pytest and django Test
     - Github action workflow for environment
+
+1.2.x:
+    - Adding Production code configuration
