@@ -36,7 +36,7 @@ CSRF_COOKIE_SECURE = True
 
 SESSION_COOKIE_SECURE = True
 
-LOGIN_URL = '/user/login' 
+LOGIN_URL = '/user/login'
 
 # Application definition
 

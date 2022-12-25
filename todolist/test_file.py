@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 import pytest
 from .models import Task
 
+
 @pytest.mark.django_db  # give test access to database
 def test_create_task():
     # Create dummy data
@@ -12,6 +13,7 @@ def test_create_task():
     # Assert the dummy data saved as expected
     assert task.title == "Dump"
     assert task.description == "dump testing"
+
 
 @pytest.mark.django_db
 def test_tasklist_view():
@@ -23,10 +25,12 @@ def test_tasklist_view():
     response = client.get('/todo/')
     assert response.status_code == 200
 
+
 def test_tasklist_url():
     path = reverse('tasks')
     print(path)
     assert resolve(path).view_name == "tasks"
+
 
 @pytest.mark.django_db
 def test_taskcreate_view():
@@ -37,6 +41,7 @@ def test_taskcreate_view():
     client.login(username='testuser', password='12345')
     response = client.get('/todo/taskcreate/')
     assert response.status_code == 200
+
 
 def test_taskcreate_url():
     path = reverse('taskcreate')
@@ -54,6 +59,7 @@ def test_taskupdateview():
     client.login(username='testuser', password='12345')
     response = client.get('/todo/taskupdate/0/')
     assert response.status_code == 200
+
 
 @pytest.mark.django_db
 def test_taskdeleteview():
