@@ -45,7 +45,7 @@ class TaskUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'todolist/task_update.html'
 
     def test_func(self):
-        return str(self.request.user.get_username()) == str(self.get_object().user) # noqa: E501
+        return str(self.request.user.get_username()) == str(self.get_object().user)  # noqa: E501
 
 
 class TaskDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -55,4 +55,4 @@ class TaskDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     template_name = 'todolist/task_delete.html'
 
     def test_func(self):
-        return str(self.request.user.get_username()) == str(self.get_object().user) # noqa: E501
+        return str(self.request.user.get_username()) == str(self.get_object().user)  # noqa: E501
