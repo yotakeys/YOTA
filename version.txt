@@ -15,3 +15,8 @@ Detailed:
 
 1.2.x:
     - Adding Production code configuration
+    - Adding security Code (HTTPS, Cookie, Ect)
+
+1.3.x:
+    - Adding User features
+    - Add Todolist App for User Features

@@ -36,6 +36,8 @@ CSRF_COOKIE_SECURE = True
 
 SESSION_COOKIE_SECURE = True
 
+LOGIN_URL = '/user/login'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -47,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
     'User.apps.UserConfig',
+    'todolist.apps.TodolistConfig',
 ]
 
 MIDDLEWARE = [
