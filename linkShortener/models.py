@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
 # Create your models here.
 
@@ -16,3 +16,15 @@ class Url(models.Model):
 
     class Meta:
         ordering = ['create']
+
+    def clean(self):
+        # data from the form is fetched using super function
+        super(Url, self).clean()
+        short = self.shortUrl
+        long = self.longUrl
+        # conditions to be met for the username length
+        if ' ' in short:
+            raise ValidationError('Short url is not allowed to contain spaces')
+        if ' ' in long:
+            raise ValidationError('Long url is not allowed to contain spaces')
+        return self

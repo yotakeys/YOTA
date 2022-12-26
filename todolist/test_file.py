@@ -39,7 +39,7 @@ def test_taskcreate_view():
     user.save()
     client = Client()
     client.login(username='testuser', password='12345')
-    response = client.get('/todo/taskcreate/')
+    response = client.get('/todo/create/')
     assert response.status_code == 200
 
 
@@ -57,7 +57,7 @@ def test_taskupdateview():
     Task.objects.create(id=0, user=users, title='test', description='test')
     client = Client()
     client.login(username='testuser', password='12345')
-    response = client.get('/todo/taskupdate/0/')
+    response = client.get('/todo/update/0/')
     assert response.status_code == 200
 
 
@@ -69,5 +69,5 @@ def test_taskdeleteview():
     Task.objects.create(id=0, user=users, title='test', description='test')
     client = Client()
     client.login(username='testuser', password='12345')
-    response = client.get('/todo/taskdelete/0/')
+    response = client.get('/todo/delete/0/')
     assert response.status_code == 200
