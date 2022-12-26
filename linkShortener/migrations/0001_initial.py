@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
             name='Url',
             fields=[
                 ('longUrl', models.TextField()),
-                ('shortUrl', models.CharField(max_length=30, primary_key=True, serialize=False)), # noqa: E501
+                ('shortUrl', models.CharField(max_length=30, primary_key=True, serialize=False)),  # noqa: E501
                 ('create', models.DateTimeField(auto_now_add=True)),
                 ('user', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),  # noqa: E501
             ],

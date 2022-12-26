@@ -1,4 +1,4 @@
-1.3.0
+1.4.0
 
 Detailed:
 
@@ -20,3 +20,6 @@ Detailed:
 1.3.x:
     - Adding User features
     - Add Todolist App for User Features
+
+1.4.x:
+    - Adding LinkShortener for User features
