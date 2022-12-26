@@ -72,6 +72,7 @@ def test_urldeleteview():
     response = client.get('/url/delete/dump/')
     assert response.status_code == 200
 
+
 @pytest.mark.django_db
 def test_urlredirect():
     Url.objects.create(longUrl="https://github.com/yotakeys", shortUrl="dump")

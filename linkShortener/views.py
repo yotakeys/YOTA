@@ -7,9 +7,9 @@ from django.contrib.auth.mixins import UserPassesTestMixin
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.views.generic.list import ListView
 
-from django.contrib.auth import login
 from .models import Url
 # Create your views here.
+
 
 class UrlList(LoginRequiredMixin, ListView):
     model = Url
@@ -42,7 +42,7 @@ class UpdateUrl(LoginRequiredMixin, UserPassesTestMixin, UpdateView, ListView):
     context_object_name = "urls"
 
     def test_func(self):
-        return str(self.request.user.get_username()) == str(self.get_object().user)
+        return str(self.request.user.get_username()) == str(self.get_object().user)  # noqa: E501
 
 
 class DeleteUrl(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -52,7 +52,7 @@ class DeleteUrl(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     template_name = 'linkShortener/url_delete.html'
 
     def test_func(self):
-        return str(self.request.user.get_username()) == str(self.get_object().user)
+        return str(self.request.user.get_username()) == str(self.get_object().user)  # noqa: E501
 
 
 class CreateUrl(LoginRequiredMixin, CreateView):
