@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include("main.urls")),
     path('user/', include("User.urls")),
     path('todo/', include("todolist.urls")),
+    path('url/', include("linkShortener.urls")),
 ]
