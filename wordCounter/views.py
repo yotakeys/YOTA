@@ -26,11 +26,11 @@ def wordCounter(request):
         __sentences = len(__text.split('.')) - 1
         __paragraphs = len(__text.split('\n'))
 
-        __readingTime = __words/4.0
-        __readingTimeMinute = floor(__readingTime/60)
-        __readingTimeSecond = floor(__readingTime%60)
+        __readingTime = __words / 4.0
+        __readingTimeMinute = floor(__readingTime / 60)
+        __readingTimeSecond = floor(__readingTime % 60)
 
-    return render(request, 'wordCounter/index.html', context = {
+    return render(request, 'wordCounter/index.html', context={
         'text': __textPass,
         'char': __characters,
         'word': __words,

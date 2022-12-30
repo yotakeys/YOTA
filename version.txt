@@ -1,4 +1,4 @@
-1.4.1
+1.5.0
 
 Detailed:
 
@@ -23,3 +23,6 @@ Detailed:
 
 1.4.x:
     - Adding LinkShortener for User features
+
+1.5.x:
+    - Adding WordCounter App for user features
