@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'User.apps.UserConfig',
     'todolist.apps.TodolistConfig',
     'linkShortener.apps.LinkshortenerConfig',
+    'wordCounter.apps.WordcounterConfig',
 ]
 
 MIDDLEWARE = [
