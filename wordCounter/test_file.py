@@ -2,6 +2,7 @@
 from django.test import Client
 from django.urls import reverse, resolve
 
+
 def test_urllist_view():
     client = Client()
     response = client.get('/wordcounter/')
