@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Word Counter</title>
+<link rel="shortcut icon" href="{% static 'icon/YOTA.ico' %}" type="image/x-icon">
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'wordCounter/css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Word Counter</h1>
+        <form id="form" action="" , method="POST">
+            {% csrf_token %}
+            <textarea name="textInput" placeholder="Enter your text here...">{{text}}</textarea>
+            <input class="submitButton" type="submit" value="Count">
+        </form>
+        <div class="output row">
+            <div>Characters: <span id="characterCount">{{char}}</span></div>
+            <div>Words: <span id="wordCount">{{word}}</span></div>
+        </div>
+        <div class="output row">
+            <div>Sentences: <span id="sentenceCount">{{sentence}}</span></div>
+            <div>Paragraphs: <span id="paragraphCount">{{paragraph}}</span></div>
+        </div>
+        <div class="output row time">
+            <div>Reading Time: <span id="readingTime">{{readingTimeMinute}} Minute {{readingTimeSecond}} Second</span>
+            </div>
+        </div>
+        <!-- <div class="keywords">
+            Top keywords:
+            <ul id="topKeywords">
+            </ul>
+        </div> -->
+    </div>
+</body>
+
+</html>
