@@ -1,6 +1,10 @@
-from django.shortcuts import render, HttpResponse
+from django.views.generic import ListView, DetailView
+from .models import Post
 
-# Create your views here.
+class PostList(ListView):
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = 'index.html'
 
-def testIndexBlog(request):
-    return HttpResponse('Ini Blog')
+class PostDetail(DetailView):
+    model = Post
+    template_name = 'post_detail.html'
