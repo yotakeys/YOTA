@@ -1,0 +1,17 @@
+{% load static %}
+{% block sidebar %}
+
+<!-- Sidebar Widgets Column -->
+<div class="col-md-4 float-right ">
+    <div class="card my-4">
+        <h5 class="card-header">About me :</h5>
+        <div class="card-body">
+            <p class="card-text" style="text-align:justify"> Hello, I am Keyisa Raihan, an ITS student and Python developer. Curently exploring automation, software/web development, data processing and machine learning using
+            Python.</p>
+            <a href="{% url 'home' %}" class="btn btn-danger">Know
+                more!</a>
+        </div>
+    </div>
+</div>
+
+{% endblock sidebar %}

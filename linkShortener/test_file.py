@@ -28,7 +28,6 @@ def test_urllist_view():
 
 def test_urllist_url():
     path = reverse('url')
-    print(path)
     assert resolve(path).view_name == "url"
 
 
@@ -45,7 +44,6 @@ def test_urlcreate_view():
 
 def test_urlcreate_url():
     path = reverse('urlCreate')
-    print(path)
     assert resolve(path).view_name == "urlCreate"
 
 

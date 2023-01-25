@@ -14,5 +14,4 @@ def test_main_view():
 
 def test_main_url():
     path = reverse('home')
-    print(path)
     assert resolve(path).view_name == "home"

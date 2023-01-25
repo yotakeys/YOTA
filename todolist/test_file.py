@@ -28,7 +28,6 @@ def test_tasklist_view():
 
 def test_tasklist_url():
     path = reverse('tasks')
-    print(path)
     assert resolve(path).view_name == "tasks"
 
 
@@ -45,7 +44,6 @@ def test_taskcreate_view():
 
 def test_taskcreate_url():
     path = reverse('taskcreate')
-    print(path)
     assert resolve(path).view_name == "taskcreate"
 
 

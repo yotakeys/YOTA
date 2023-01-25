@@ -1,4 +1,4 @@
-1.5.1
+1.6.0
 
 Detailed:
 
@@ -26,3 +26,6 @@ Detailed:
 
 1.5.x:
     - Adding WordCounter App for user features
+
+1.6.x:
+    - Adding blog to site
