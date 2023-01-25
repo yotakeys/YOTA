@@ -23,7 +23,6 @@ def test_login_view():
 
 def test_login_url():
     path = reverse('login')
-    print(path)
     assert resolve(path).view_name == "login"
 
 
@@ -36,5 +35,4 @@ def test_register_view():
 
 def test_register_url():
     path = reverse('register')
-    print(path)
     assert resolve(path).view_name == "register"

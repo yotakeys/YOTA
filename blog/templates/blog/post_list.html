@@ -1,21 +1,7 @@
 {% extends "blog/base.html" %}
+{% load static %}
 {% load markdown_extras %}
 {% block content %}
-<style>
-    body {
-        font-family: "Poppins", sans-serif;
-        font-size: 18px;
-        background-color: #fdfdfd;
-    }
-
-    .head_text {
-        color: white;
-    }
-
-    .card {
-        box-shadow: 0 16px 48px #E3E7EB;
-    }
-</style>
 
 <div class="container">
     <div class="row">
@@ -26,7 +12,7 @@
                 <div class="card-body">
                     <h2 class="card-title">{{ post.title }}</h2>
                     <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
-                    <p class="card-text">{{post.content| markdown | safe | slice:":200" }}</p>
+                    <p class="card-text">{{post.content| changeMarkdown | safe | slice:":200" }}</p>
                     <a href="{% url 'postDetail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
                 </div>
             </div>

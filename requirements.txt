@@ -6,6 +6,7 @@ django-environ==0.9.0
 exceptiongroup==1.0.4
 Faker==12.0.1
 iniconfig==1.1.1
+Markdown==3.4.1
 mixer==7.2.2
 packaging==22.0
 pluggy==1.0.0
