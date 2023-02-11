@@ -22,9 +22,9 @@
     <div class="text-5xl text-white mb-10">Anime Recommender</div>
     <form method="post" action="" id="form">
         {% csrf_token %}
-        <textarea class="rounded w-3/4 h-full mb-5" name="description" placeholder="Enter your description here..">{{description}}</textarea>
+        <textarea class="rounded w-3/4 h-full mb-5 p-5" name="description" placeholder="Enter your description here..">{{description}}</textarea>
         <br>
-        <input class="rounded h-100 mb-5" type="number" value="{{amount}}" name="amount">
+        <input class="rounded h-100 mb-5 p-3" type="number" value="{{amount}}" name="amount">
         <br>
         <input class="rounded bg-slate-900 mb-10 p-2 text-white" type="submit" value="Search">
     </form>

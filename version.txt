@@ -1,4 +1,4 @@
-1.6.0
+1.7.0
 
 Detailed:
 
@@ -29,3 +29,6 @@ Detailed:
 
 1.6.x:
     - Adding blog to site
+
+1.7.x:
+    - Adding anime recommender based description for user feature
