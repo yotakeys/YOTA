@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'yota.site']
 
@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'linkShortener.apps.LinkshortenerConfig',
     'wordCounter.apps.WordcounterConfig',
     'blog.apps.BlogConfig',
+    'animeRecommender.apps.AnimerecommenderConfig',
 ]
 
 MIDDLEWARE = [

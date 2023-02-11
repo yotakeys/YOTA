@@ -24,4 +24,5 @@ urlpatterns = [
     path('url/', include("linkShortener.urls")),
     path('wordcounter/', include("wordCounter.urls")),
     path('blog/', include("blog.urls")),
+    path('animerecommender/', include("animeRecommender.urls")),
 ]
