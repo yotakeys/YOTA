@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Anime Recommender</title>
+    <link rel="shortcut icon" href="{% static 'icon/YOTA.ico' %}" type="image/x-icon">
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'animeRecommender/css/style.css' %}">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-8 items-center bg-slate-800 text-center" style="font-family: 'Poppins', sans-serif;">
+
+    <div class="text-5xl text-white mb-10">Anime Recommender</div>
+    <form method="post" action="" id="form">
+        {% csrf_token %}
+        <textarea class="rounded w-3/4 h-full mb-5 p-5" name="description" placeholder="Enter your description here..">{{description}}</textarea>
+        <br>
+        <input class="rounded h-100 mb-5 p-3" type="number" value="{{amount}}" name="amount">
+        <br>
+        <input class="rounded bg-slate-900 mb-10 p-2 text-white" type="submit" value="Search">
+    </form>
+
+    <div class="container rounded text-center w-full bg-slate-900 mx-auto p-8">
+        <div class="text-xl text-white mb-8">Recommendation</div>
+        {% for data in datas %}
+        <div class="rounded bg-slate-800 p-4 w-full mx-auto mb-2 mt-2">
+            <a class="text-white animate-bounce hover:text-slate-900">{{data}}</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>

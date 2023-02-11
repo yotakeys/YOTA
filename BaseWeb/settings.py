@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'linkShortener.apps.LinkshortenerConfig',
     'wordCounter.apps.WordcounterConfig',
     'blog.apps.BlogConfig',
+    'animeRecommender.apps.AnimerecommenderConfig',
 ]
 
 MIDDLEWARE = [
