@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'wordCounter.apps.WordcounterConfig',
     'blog.apps.BlogConfig',
     'animeRecommender.apps.AnimerecommenderConfig',
+    'confession.apps.ConfessionConfig',
 ]
 
 MIDDLEWARE = [
