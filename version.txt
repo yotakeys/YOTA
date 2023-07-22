@@ -1,4 +1,4 @@
-1.7.0
+1.8.1
 
 Detailed:
 
@@ -31,4 +31,7 @@ Detailed:
     - Adding blog to site
 
 1.7.x:
-    - Adding anime recommender based description for user feature
+    - Adding anime recommender based description for user features
+
+1.8.x:
+    - Adding confessions for user features

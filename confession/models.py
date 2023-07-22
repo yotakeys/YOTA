@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.forms import ValidationError
-from datetime import datetime
 
 # Create your models here.
 
@@ -27,7 +26,7 @@ class Confession(models.Model):
     response = models.TextField(null=True, blank=True)
     is_answerred = models.BooleanField(default=False)
 
-    create = models.DateTimeField(default=datetime.now())
+    create = models.DateTimeField(auto_now_add=True)
     answer_date = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
