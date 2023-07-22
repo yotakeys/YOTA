@@ -25,4 +25,5 @@ urlpatterns = [
     path('wordcounter/', include("wordCounter.urls")),
     path('blog/', include("blog.urls")),
     path('animerecommender/', include("animeRecommender.urls")),
+    path('confession/', include("confession.urls")),
 ]
