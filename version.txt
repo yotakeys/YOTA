@@ -35,4 +35,4 @@ Detailed:
 
 1.8.x:
     - Adding confessions for user features
-    - Adding 
+    - Update File resume and Experiences
