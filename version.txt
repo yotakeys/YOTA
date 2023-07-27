@@ -1,4 +1,4 @@
-1.8.2
+1.8.3
 
 Detailed:
 
@@ -35,3 +35,4 @@ Detailed:
 
 1.8.x:
     - Adding confessions for user features
+    - Adding 
