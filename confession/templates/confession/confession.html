@@ -23,7 +23,8 @@
 <body>
     {% if confession.is_answerred %}
     <div
-        class="min-h-screen bg-repeat p-5 pt-10 md:p-20 bg-[#DF766E] w-full flex md:flex-row flex-col justify-evenly items-center">
+        class="min-h-screen bg-repeat p-5 pt-10 md:p-20 bg-[#DF766E] w-full flex md:flex-row flex-col justify-evenly items-center"
+        style="background-image: url('{% static 'confession/images/bg-grid.png' %}');">
         <div class="w-full md:w-3/5 flex flex-col p-5">
             <div class="w-full relative p-5 bg-[#EEEAE4] gap-2 border border-black flex flex-col rounded-lg">
                 <img src="{% static 'confession/images/love.png' %}" alt="love"
