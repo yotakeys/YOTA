@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'animeRecommender.apps.AnimerecommenderConfig',
     'confession.apps.ConfessionConfig',
+    'mammalsNcbi.apps.MammalsncbiConfig'
 ]
 
 MIDDLEWARE = [

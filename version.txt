@@ -1,4 +1,4 @@
-1.8.4
+1.9.0
 
 Detailed:
 
@@ -36,3 +36,6 @@ Detailed:
 1.8.x:
     - Adding confessions for user features
     - Update File resume and Experiences
+
+1.9.x:
+    - Adding Mammals NCBI for user features

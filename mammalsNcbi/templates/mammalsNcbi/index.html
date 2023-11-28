@@ -1,0 +1,281 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
+    />
+    <link rel="stylesheet" href="{% static 'mammalsNcbi/styles.css' %}" />
+    <title>App</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">Animals</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link active-link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="#feature" class="nav__link">Feature</a>
+            </li>
+          </ul>
+
+          <!-- Close Button -->
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-line"></i>
+          </div>
+        </div>
+        <!-- Toggle button -->
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main class="main">
+      <!-- Home -->
+      <section class="home section" id="home">
+        <div class="home__container container grid">
+          <div class="home__content">
+            <img src="{% static 'mammalsNcbi/home-img.png' %}" alt="image" class="home__img" />
+
+            <h1 class="home__title">
+              <span>M</span>
+              <span>A</span>
+              <span>M</span>
+              <span>M</span>
+              <span>A</span>
+              <span>L</span>
+              <span>S</span>
+
+            </h1>
+
+            <div class="home__tooltip">
+              <img
+                src="{% static 'mammalsNcbi/tooltip-right.svg' %}"
+                alt=""
+                class="home__tooltip-img"
+              />
+              <span class="home__tooltip-text">Description Based Search</span>
+            </div>
+          </div>
+
+          <a href="#search-now" class="home__button button">
+            Search Now <i class="ri-search-2-line"></i>
+          </a>
+
+          <div class="home__social">
+            <span class="home__social-text">Follow us</span>
+
+            <div class="home__social-links">
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                class="home__social-link"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                class="home__social-link"
+              >
+                <i class="ri-facebook-circle-fill"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                class="home__social-link"
+              >
+                <i class="ri-youtube-fill"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Search Section -->
+      <section class="search section" id="search-now">
+        <div class="search__container container grid">
+          <div class="search__content">
+            <h2 class="section__title">Description Based Search</h2>
+            <div class="search__header">
+              <form action="" class="search__form" id="form" method="post">
+                {% csrf_token %}
+                <input type="text" name="description" value="{{description}}" placeholder="Type Description" class="search__input">
+                <button class="search__button button">
+                  Search <i class="ri-search-2-line"></i>
+                </button>
+
+              </form>
+            </div>
+          </div>
+          <div class="table__body">
+            <table>
+              <thead>
+                  <tr>
+                      <th> Id Taxon <span class="icon-arrow">&UpArrow;</span></th>
+                      <th> Mammals Name <span class="icon-arrow">&UpArrow;</span></th>
+                      <th> Accession Code <span class="icon-arrow">&UpArrow;</span></th>
+                      <th> Action </th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for data in datas %}
+                    <tr>
+                      <td> {{data.taxon_id}} </td>
+                      <td> {{data.organism_name}} </td>
+                      <td> {{data.accession}} </td>
+                      <!-- <td> Homo sapiens, also known as modern humans, are the species to which all existing human beings  The history of Homo sapiens dates back approximately 300,000 years ago when the species first emerged in  Over time, Homo sapiens gradually evolved and spread across the world, eventually populating every   Characteristically, Homo sapiens are unique among other species due to their highly developed cognitive abilities, complex language skills, and advanced toolmaking  They possess a bipedal stance, which means they walk on two legs, freeing their hands to engage in various  This upright posture also enables them to have a wider field of vision compared to many other   One of the most distinguishing features of Homo sapiens is their intricate social  Humans exhibit strong social bonds and form complex societies that vary in cultural practices, beliefs, languages, and  This versatility has allowed Homo sapiens to thrive in diverse environments and adapt to various climates and   Habitatwise, Homo sapiens have demonstrated their adaptability by inhabiting a variety of  From tropical rainforests to arid deserts, icy tundras to dense urban cities, humans have established settlements in nearly every kind of terrain on  This adaptability is one of the key reasons behind the success of Homo sapiens as a   The current population of Homo sapiens is estimated to be around 9 billion people and  This exponential growth can be attributed to several factors, such as improved healthcare, technological advancements, and the ability to cultivate and produce abundant food  However, this rapid population expansion has also led to challenges related to resource distribution, sustainability, and environmental   In addition to these general characteristics, Homo sapiens possess many specific attributes that contribute to their  Humans have a highly developed brain that enables complex cognitive functions such as problemsolving, critical thinking, and  They display a wide range of emotions and are capable of showing empathy towards   Homo sapiens have also made significant advancements in science, technology, and artistic  They have built remarkable structures, created exquisite artwork, developed sophisticated systems of governance, and made remarkable discoveries about the world and the   Overall, Homo sapiens are not only a dominant species due to their physical and intellectual capabilities, but also because of their ability to adapt, learn, and  While humans have undoubtedly achieved remarkable feats, they also face numerous challenges in terms of maintaining a sustainable future for both themselves and the planet they </td> -->
+                      <td>
+                        <a href="{{data.url_download}}" class="action__button button">Download<i class="ri-download-cloud-2-line"></i></a>
+                      </td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="about section" id="about">
+        <div class="about__container container grid">
+            <div class="about__data">
+                <h2 class="section__title">
+                    MORE ABOUT US
+                </h2>
+
+                <P class="about__description">
+                    We are Wudahek Team's, a platform that can be used to make it easier to download fasta dataset files originating from The National Center for Biotechnology Information. Explore all data just by typing the mammals description and download all you want easily
+                </P>
+
+                <a href="#" class="button">
+                    Know More <i class="ri-information-fill"></i>
+                </a>
+            </div>
+
+            <img src="{% static 'mammalsNcbi/about-img.png' %}" alt="image" class="about__img">
+        </div>
+      </section>
+
+      <!-- Feature Section -->
+      <section class="feature section" id="feature">
+        <h2 class="section__title">
+            FEATURE
+        </h2>
+
+        <div class="feature__container container grid">
+            <div class="feature__content">
+                <img src="{% static 'mammalsNcbi/feature-img.png'%}" alt="image" class="feature__img">
+                <div class="feature__tooltip feature__tooltip-1">
+                    <img src="{% static 'mammalsNcbi/tooltip-right.svg' %}" alt="" class="feature__tooltip-img">
+                    <span class="feature__tooltip-text">Search Based Description</span>
+                </div> 
+                <div class="feature__tooltip feature__tooltip-2">
+                    <img src="{% static 'mammalsNcbi/tooltip-right.svg' %}" alt="" class="feature__tooltip-img">
+                    <span class="feature__tooltip-text">Download Fasta File</span>
+                </div> 
+                <div class="feature__tooltip feature__tooltip-3">
+                    <img src="{% static 'mammalsNcbi/tooltip-right.svg' %}" alt="" class="feature__tooltip-img">
+                    <span class="feature__tooltip-text">Mammals Listing</span>
+                </div> 
+            </div>
+            <a href="#search-now" class="feature__button button">
+                Search Now <i class="ri-search-2-line"></i>
+            </a>
+        </div>
+      </section>
+      <section class="sponsor section">
+        <div class="sponsor__container container grid">
+            <img src="{% static 'mammalsNcbi/sponsor-img-1.png'%}" alt="image" class="sponsor__img">
+            <img src="{% static 'mammalsNcbi/sponsor-img-3.png'%}" alt="image" class="sponsor__img">
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container container grid">
+            <div>
+                <a href="#" class="footer__logo">Animals</a>
+            </div>
+            <div class="footer__data grid">
+                <div>
+                    <h3 class="footer__title">Contact</h3>
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">Email</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Github</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Fax</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer__title">Support</h3>
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">Feature Help</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Updates</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Privacy & Policy</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__group">
+                    <form action="" class="footer__form">
+                        <input type="opinion" placeholder="Opinion" class="footer__input">
+                        <button class="footer__button button">
+                            Send <i class="ri-send-plane-fill"></i>
+                        </button>
+                    </form>
+
+                    <div class="footer__social">
+                        <a href="https://www.facebook.com/" class="footer__social-link">
+                            <i class="ri-facebook-circle-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" class="footer__social-link">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="https://www.youtube.com/" class="footer__social-link">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="footer__copy">
+            &#169; All Rights Reserved By Wudahek Team's
+        </span>
+    </footer>
+
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-s-line"></i>
+    </a>
+
+    <script src="{% static 'mammalsNcbi/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'mammalsNcbi/script.js' %}"></script>
+  </body>
+</html>
