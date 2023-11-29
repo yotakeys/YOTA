@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from gradio_client import Client
+import requests
 from .models import Mammals
 
 # Create your views here.
@@ -22,15 +23,14 @@ def index(request):
         description = request.POST.get('description')
         amount = 5
 
-        client = Client(
-            "https://yotakey-mammals-search.hf.space/--replicas/66lqq/")
-        result = client.predict(
-            description,
-            amount,
-            api_name="/predict"
-        )
+        response = requests.post("https://yotakey-mammals-search.hf.space/run/predict", json={
+            "data": [
+                description,
+                amount,
+            ]
+        }).json()
 
-        data_mammals = result.split(",\n")
+        data_mammals = response["data"][0].split(",\n")[:-1]
 
         data = Mammals.objects.filter(
             organism_name__in=data_mammals)
